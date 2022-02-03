@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fil d'actualité{% endblock %}
+
+{% block body %}
+{% for blogpost in blogposts %}
+    <div>
+        <h2>{{ blogpost.title }}</h2>
+        <p>{{ blogpost.content }}</p>
+        <h2>Cet article a été publié dans la rubrique {{ blogpost.category.name }}</h2>
+
+    </div>
+{% else %}
+    <p>Aucun article trouvé.</p>
+{% endfor %}
+{# /* <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/sandrine/OnSemeEnVille/src/Controller/BlogpostController.php'|file_link(0) }}">src/Controller/BlogpostController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/sandrine/OnSemeEnVille/templates/blogpost/index.html.twig'|file_link(0) }}">templates/blogpost/index.html.twig</a></code></li>
+    </ul>
+</div> */ #}
+{% endblock %}

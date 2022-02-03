@@ -46,12 +46,13 @@ class Blogpost
     private $user;
 
     /**
-     * @ORM\OneToMany(targetEntity=comment::class, mappedBy="blogpost")
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="blogpost",
+     * orphanRemoval=true)
      */
     private $comment;
 
     /**
-     * @ORM\ManyToMany(targetEntity=tag::class, inversedBy="blogposts")
+     * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="blogposts")
      */
     private $tag;
 
